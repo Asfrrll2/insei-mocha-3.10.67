@@ -17,24 +17,24 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef _MACH_TEGRA_BOARD_ARDBEG_H
-#define _MACH_TEGRA_BOARD_ARDBEG_H
+#ifndef _MACH_TEGRA_BOARD_MOCHA_H
+#define _MACH_TEGRA_BOARD_MOCHA_H
 
 #include <mach/irqs.h>
 #include "gpio-names.h"
 
-int ardbeg_emc_init(void);
-int ardbeg_display_init(void);
-int ardbeg_panel_init(void);
-int ardbeg_sdhci_init(void);
-int ardbeg_sensors_init(void);
-int ardbeg_regulator_init(void);
-int ardbeg_suspend_init(void);
-int ardbeg_rail_alignment_init(void);
-int ardbeg_soctherm_init(void);
-int ardbeg_edp_init(void);
+int mocha_emc_init(void);
+int mocha_display_init(void);
+int mocha_panel_init(void);
+int mocha_sdhci_init(void);
+int mocha_sensors_init(void);
+int mocha_regulator_init(void);
+int mocha_suspend_init(void);
+int mocha_rail_alignment_init(void);
+int mocha_soctherm_init(void);
+int mocha_edp_init(void);
 void shield_sysedp_dynamic_capping_init(void);
-void ardbeg_camera_auxdata(void *);
+void mocha_camera_auxdata(void *);
 
 
 /* Invensense MPU Definitions */
@@ -120,27 +120,6 @@ GPIO, also the GPIO is same for T114 interposer and T124*/
 #define TEGRA_GPIO_I2C4_SDA	TEGRA_GPIO_PV5
 #define TEGRA_GPIO_I2C5_SCL	TEGRA_GPIO_PZ6
 #define TEGRA_GPIO_I2C5_SDA	TEGRA_GPIO_PZ7
-
-/* Laguna specific */
-
-int laguna_pinmux_init(void);
-int laguna_regulator_init(void);
-
-/* Norrin specific */
-int norrin_regulator_init(void);
-int norrin_soctherm_init(void);
-int norrin_emc_init(void);
-
-/* loki specific */
-int loki_regulator_init(void);
-int loki_emc_init(void);
-int loki_sdhci_init(void);
-int loki_pmon_init(void);
-int loki_panel_init(void);
-int loki_kbc_init(void);
-int loki_sensors_init(void);
-int loki_soctherm_init(void);
-int loki_rail_alignment_init(void);
 
 /* AUO Display related GPIO */
 #define DSI_PANEL_RST_GPIO      TEGRA_GPIO_PH3 /* GMI_AD11 */
