@@ -440,7 +440,7 @@ static int __init ardbeg_wifi_prepower(void)
 subsys_initcall_sync(ardbeg_wifi_prepower);
 #endif
 
-int __init ardbeg_sdhci_init(void)
+int __init mocha_sdhci_init(void)
 {
 	int nominal_core_mv;
 	int min_vcore_override_mv;
