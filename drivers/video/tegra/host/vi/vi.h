@@ -23,7 +23,7 @@
 
 #include <linux/platform/tegra/isomgr.h>
 
-#include "camera_priv_defs.h"
+#include "../../camera/camera_priv_defs.h"
 #include "chip_support.h"
 
 #define VI_CFG_INTERRUPT_MASK_0				0x8c
