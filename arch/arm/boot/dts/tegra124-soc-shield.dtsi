@@ -43,7 +43,7 @@
 		status = "okay";
 	};
 
-	pinmux@70000868 {
+	pinmux {
 		status = "okay";
 		prod-settings {
 			prod {

@@ -264,6 +264,9 @@ dtb-$(CONFIG_ARCH_TEGRA) += tegra20-harmony.dtb \
 	tegra124-p1855.dtb \
 	tegra124-vcm30t124-flashing.dtb \
 	tegra124-green-arrow-p2267-base-a00.dtb
+	
+dtb-$(CONFIG_MACH_MOCHA) += tegra124-mocha.dtb
+
 dtb-$(CONFIG_ARCH_VERSATILE) += versatile-ab.dtb \
 	versatile-pb.dtb
 dtb-$(CONFIG_ARCH_VEXPRESS) += vexpress-v2p-ca5s.dtb \

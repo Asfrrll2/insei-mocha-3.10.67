@@ -180,7 +180,7 @@
 		status = "disabled";
 	};
 
-	pinmux: pinmux@70000868 {
+	pinmux: pinmux {
 		compatible = "nvidia,tegra124-pinmux";
 		reg = <0x0 0x70000868 0x0 0x164		/* Pad control registers */
 		       0x0 0x70003000 0x0 0x434		/* Mux registers */
