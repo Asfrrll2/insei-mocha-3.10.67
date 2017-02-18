@@ -129,8 +129,8 @@ obj-${CONFIG_MACH_MOCHA}               += board-mocha-sdhci.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-sensors.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-memory.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-power.o
-obj-${CONFIG_MACH_MOCHA}               += panel-s-wqxga-7-9-x6.o
-obj-${CONFIG_MACH_MOCHA}               += panel-a-wqxga-7-9-x6.o
+# obj-${CONFIG_MACH_MOCHA}               += panel-s-wqxga-7-9-x6.o //FIx it
+# obj-${CONFIG_MACH_MOCHA}               += panel-a-wqxga-7-9-x6.o
 
 
 obj-${CONFIG_MACH_LOKI}               	+= board-loki.o
