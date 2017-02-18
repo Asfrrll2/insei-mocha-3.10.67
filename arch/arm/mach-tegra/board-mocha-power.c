@@ -304,7 +304,7 @@ static inline int ardbeg_cl_dvfs_init(struct board_info *pmu_board_info)
 { return 0; }
 #endif
 
-int __init ardbeg_rail_alignment_init(void)
+int __init mocha_rail_alignment_init(void)
 {
 	struct board_info pmu_board_info;
 
@@ -324,7 +324,7 @@ int __init ardbeg_rail_alignment_init(void)
 	return 0;
 }
 
-int __init ardbeg_regulator_init(void)
+int __init mocha_regulator_init(void)
 {
 	struct board_info pmu_board_info;
 
@@ -350,7 +350,7 @@ int __init ardbeg_regulator_init(void)
 	return 0;
 }
 
-int __init ardbeg_suspend_init(void)
+int __init mocha_suspend_init(void)
 {
 	struct board_info pmu_board_info;
 
@@ -821,7 +821,7 @@ static struct soctherm_throttle voltmon_throttle_t12x = {
 	},
 };
 
-int __init ardbeg_soctherm_init(void)
+int __init mocha_soctherm_init(void)
 {
 	const int t12x_edp_temp_margin = 7000,
 		t13x_cpu_edp_temp_margin = 5000,
