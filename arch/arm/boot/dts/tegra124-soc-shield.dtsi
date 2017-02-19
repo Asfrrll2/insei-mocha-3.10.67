@@ -285,7 +285,7 @@
 		};
 
 		dsi {
-			status = "disabled";
+			status = "okay";
 		};
 
 		vic {

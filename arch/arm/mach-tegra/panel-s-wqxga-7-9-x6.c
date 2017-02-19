@@ -124,7 +124,7 @@ static int dsi_s_wqxga_7_9_enable(struct device *dev)
 		msleep(24);
 #if DSI_PANEL_RESET
 	pr_info("panel: %s\n", __func__);
-	gpio_set_value(en_panel_rst, 1);
+	gpio_direction_output(en_panel_rst, 1);
 	usleep_range(1000, 3000);
 	gpio_set_value(en_panel_rst, 0);
 	usleep_range(1000, 3000);
@@ -184,10 +184,45 @@ static int dsi_s_wqxga_7_9_postsuspend(void)
 	return 0;
 }
 
+static int dsi_s_wqxga_7_9_bl_notify(struct device *dev, int brightness)
+{
+	struct backlight_device *bl = NULL;
+	struct pwm_bl_data *pb = NULL;
+	int cur_sd_brightness = atomic_read(&sd_brightness);
+	bl = (struct backlight_device *)dev_get_drvdata(dev);
+	pb = (struct pwm_bl_data *)dev_get_drvdata(&bl->dev);
+
+	/* SD brightness is a percentage */
+	brightness = (brightness * cur_sd_brightness) / 255;
+
+	/* Apply any backlight response curve */
+	if (brightness > 255)
+		pr_info("Error: Brightness > 255!\n");
+	else if (pb->bl_measured)
+		brightness = pb->bl_measured[brightness];
+
+	return brightness;
+}
+
+static int dsi_s_wqxga_7_9_check_fb(struct device *dev, struct fb_info *info)
+{
+	struct platform_device *pdev = NULL;
+	pdev = to_platform_device(bus_find_device_by_name(
+		&platform_bus_type, NULL, "tegradc.0"));
+	return info->device == &pdev->dev;
+}
+
+static struct pwm_bl_data_dt_ops  dsi_s_wqxga_7_9_pwm_bl_ops = {
+	.notify = dsi_s_wqxga_7_9_bl_notify,
+	.check_fb = dsi_s_wqxga_7_9_check_fb,
+	.blnode_compatible = "ti,lp8556",
+};
+
 struct tegra_panel_ops dsi_s_wqxga_7_9_x6_ops = {
 	.enable = dsi_s_wqxga_7_9_enable,
 	.postpoweron = dsi_s_wqxga_7_9_postpoweron,
 	.postsuspend = dsi_s_wqxga_7_9_postsuspend,
 	.disable = dsi_s_wqxga_7_9_disable,
+	.pwm_bl_ops = &dsi_s_wqxga_7_9_pwm_bl_ops,
 };
 
