@@ -541,6 +541,9 @@ static struct device_node *available_internal_panel_select(
 	} else if (of_device_is_compatible(np_panel, "s,wqxga-10-1")) {
 		tegra_panel_register_ops(dc_out,
 			&dsi_s_wqxga_10_1_ops);
+	} else if (of_device_is_compatible(np_panel, "s,wqxga-7-9-x6")) {
+		tegra_panel_register_ops(dc_out,
+			&dsi_s_wqxga_7_9_x6_ops);
 	} else if (of_device_is_compatible(np_panel, "c,wxga-14-0")) {
 		tegra_panel_register_ops(dc_out,
 			&lvds_c_1366_14_ops);
@@ -637,6 +640,12 @@ static struct device_node
 		if (np_panel && pdata && dc_out)
 			tegra_panel_register_ops(dc_out,
 				&dsi_s_wqxga_10_1_ops);
+		break;
+	case BOARD_E1780:
+		np_panel = of_find_compatible_node(NULL, NULL, "s,wqxga-7-9-x6");
+		if (np_panel && pdata && dc_out)
+			tegra_panel_register_ops(dc_out,
+				&dsi_s_wqxga_7_9_x6_ops);
 		break;
 	case BOARD_PM366:
 		np_panel = of_find_compatible_node(NULL, NULL, "c,wxga-14-0");

@@ -2,6 +2,7 @@ GCOV_PROFILE := y
 GCOV_PROFILE_panel-a-1080p-11-6.o := n
 GCOV_PROFILE_panel-a-1080p-14-0.o := n
 GCOV_PROFILE_panel-a-1200-1920-8-0.o := n
+GCOV_PROFILE_panel-s-wqxga-7-9-x6.o := n
 GCOV_PROFILE_panel-a-1200-800-8-0.o := n
 GCOV_PROFILE_panel-a-edp-1080p-14-0.o := n
 GCOV_PROFILE_panel-c-lvds-1366-14.o := n
@@ -100,6 +101,7 @@ obj-y                                   += panel-s-wuxga-7-0.o
 obj-y                                   += panel-s-wuxga-8-0.o
 obj-y                                   += panel-a-1200-800-8-0.o
 obj-y                                   += panel-a-1200-1920-8-0.o
+obj-y                                   += panel-s-wqxga-7-9-x6.o
 obj-y                                   += panel-a-edp-1080p-14-0.o
 obj-y                                   += panel-i-edp-1080p-11-6.o
 obj-y                                   += panel-c-lvds-1366-14.o
@@ -129,8 +131,6 @@ obj-${CONFIG_MACH_MOCHA}               += board-mocha-sdhci.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-sensors.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-memory.o
 obj-${CONFIG_MACH_MOCHA}               += board-mocha-power.o
-# obj-${CONFIG_MACH_MOCHA}               += panel-s-wqxga-7-9-x6.o //FIx it
-# obj-${CONFIG_MACH_MOCHA}               += panel-a-wqxga-7-9-x6.o
 
 
 obj-${CONFIG_MACH_LOKI}               	+= board-loki.o
