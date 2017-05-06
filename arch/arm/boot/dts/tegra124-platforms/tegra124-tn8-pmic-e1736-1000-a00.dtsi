@@ -557,7 +557,7 @@
 						};
 					};
 
-					ldo5 {
+					ldo5_reg: ldo5 {
 						regulator-name = "avdd-dsi-csi";
 						regulator-min-microvolt = <1200000>;
 						regulator-max-microvolt = <1200000>;
@@ -745,7 +745,7 @@
 						};
 					};
 
-					ldousb {
+					ldousb_reg: ldousb {
 						regulator-name = "avdd-usb";
 						regulator-min-microvolt = <3300000>;
 						regulator-max-microvolt = <3300000>;
